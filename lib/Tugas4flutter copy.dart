@@ -36,6 +36,7 @@ class TugasEmpattrial extends StatelessWidget {
             const Center(
               child: Text(
                 "Rental Pacar  🤗🤩🤑🤑",
+                ////////////formulir dan daftar produk
                 style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
@@ -99,6 +100,7 @@ class TugasEmpattrial extends StatelessWidget {
               kriteriaUmur: '25–45 tahun',
             ),
             const SizedBox(height: 12),
+            ///////////////////////////////ListTile
             ListTile(
   leading: Image.asset("Assets/image/anime1.jpg"),
   title: Text("Sewa 7 jam untuk liburan"),

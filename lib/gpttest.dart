@@ -1,84 +1,244 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
-
-class gptbebe extends StatelessWidget {
-  const gptbebe ({super.key});
+class Gpttest extends StatelessWidget {
+  const Gpttest({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Formulir & Daftar Produk',
-      home: const ProductFormPage(),
+      title: 'Tugas 5 - Halaman Interaksi',
+      theme: ThemeData(primarySwatch: Colors.blue),
+      home: const InteractivePage(),
     );
   }
 }
 
-class ProductFormPage extends StatelessWidget {
-  const ProductFormPage({super.key});
+class InteractivePage extends StatefulWidget {
+  const InteractivePage({super.key});
+
+  @override
+  State<InteractivePage> createState() => _InteractivePageState();
+}
+
+class _InteractivePageState extends State<InteractivePage> {
+  String displayedText = '';
+  bool isLiked = false;
+  bool showDescription = false;
+  int counter = 0;
+  int nilaiTambah = 0;
+  bool showBoxText = false;
+  List<Widget> loveEmojis = [];
+
+  void _showImageDialog() {
+    // Implement your image dialog logic here
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Formulir & Daftar Produk'),
-      ),
-      body: ListView(
-        padding: const EdgeInsets.all(16.0),
+      appBar: AppBar(title: const Text('Halaman Interaktif')),
+      body: Stack(
         children: [
-          // Formulir Input
-          const TextField(
-            decoration: InputDecoration(labelText: 'Nama'),
-          ),
-          const SizedBox(height: 16),
-          const TextField(
-            decoration: InputDecoration(labelText: 'Email'),
-            keyboardType: TextInputType.emailAddress,
-          ),
-          const SizedBox(height: 16),
-          const TextField(
-            decoration: InputDecoration(labelText: 'No. HP'),
-            keyboardType: TextInputType.phone,
-          ),
-          const SizedBox(height: 16),
-          const TextField(
-            decoration: InputDecoration(labelText: 'Deskripsi'),
-            maxLines: 3,
-          ),
-          const SizedBox(height: 24),
-          const Text(
-            'Daftar Produk',
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(height: 12),
+          SingleChildScrollView(
+            padding: const EdgeInsets.all(20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
 
-          // Daftar Produk
-          ListTile(
-            leading: const Icon(Icons.phone_android),
-            title: const Text('Smartphone X'),
-            subtitle: const Text('Rp 3.500.000'),
+              
+              children: [
+                // ElevatedButton
+                Row(
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          displayedText = 'Rida Dzakiyyah';
+                        });
+                      },
+                      child: const Text('Tampilkan Nama'),
+                    ),
+                    const SizedBox(width: 20),
+                    Text(displayedText),
+                  ],
+                ),
+                const SizedBox(height: 30),
+
+                // IconButton
+                Row(
+                  children: [
+                    IconButton(
+                      icon: Icon(
+                        Icons.favorite,
+                        color: isLiked ? Colors.red : Colors.grey,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          isLiked = !isLiked;
+                          if (isLiked) {
+                            displayedText = 'Disukai 💖';
+                            loveEmojis = List.generate(
+                              30,
+                              (index) => Positioned(
+                                left: Random().nextDouble() * MediaQuery.of(context).size.width,
+                                top: Random().nextDouble() * MediaQuery.of(context).size.height,
+                                child: Text(
+                                  '💖',
+                                  style: TextStyle(
+                                    fontSize: Random().nextDouble() * 20 + 20,
+                                  ),
+                                ),
+                              ),
+                            );
+                            Future.delayed(
+                              const Duration(milliseconds: 1500),
+                              () {
+                                setState(() {
+                                  loveEmojis = [];
+                                });
+                              },
+                            );
+                          } else {
+                            displayedText = '';
+                          }
+                        });
+                      },
+                    ),
+                    const SizedBox(width: 10),
+                    const Text('Tekan hati'),
+                  ],
+                ),
+                const SizedBox(height: 30),
+
+                // TextButton
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    TextButton(
+                      onPressed: () {
+                        setState(() {
+                          showDescription = !showDescription;
+                        });
+                      },
+                      child: const Text('Lihat Selengkapnya'),
+                    ),
+                    if (showDescription)
+                      const Padding(
+                        padding: EdgeInsets.only(top: 10),
+                        child: Text('wewok de tok not onli but de tok.'),
+                      ),
+                  ],
+                ),
+                const SizedBox(height: 30),
+
+                // InkWell
+                Column(
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        setState(() {
+                          showBoxText = !showBoxText;
+                        });
+                        debugPrint('Kotak disentuh');
+                      },
+                      child: Container(
+                        width: 150,
+                        height: 150,
+                        color: Colors.blue[100],
+                        child: Center(
+                          child: Text(
+                            showBoxText ? 'Kotak disentuh' : '',
+                            style: const TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    const Text('Sentuh kotak biru di atas'),
+                  ],
+                ),
+                const SizedBox(height: 30),
+
+                // GestureDetector
+                Column(
+                  children: [
+                    GestureDetector(
+                      onLongPress: () {
+                        debugPrint("tekan lama");
+                        setState(() {
+                          nilaiTambah--;
+                        });
+                      },
+                      onDoubleTap: () {
+                        debugPrint("tekan dua kali");
+                        setState(() {
+                          nilaiTambah = 0;
+                        });
+                      },
+                      onTap: () {
+                        debugPrint("Saya tekan disini");
+                        setState(() {
+                          nilaiTambah++;
+                        });
+                      },
+                      child: Container(
+                        height: 200,
+                        width: 200,
+                        decoration: BoxDecoration(
+                          color: Colors.red,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Center(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Icon(Icons.image, size: 40, color: Colors.white),
+                              const SizedBox(height: 10),
+                              Text(
+                                "Nilai: $nilaiTambah",
+                                style: const TextStyle(color: Colors.white),
+                              ),
+                            ],
+                          ),
+                        ),
+
+
+
+
+                        
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    const Text('Coba: tekan sekali, dua kali, atau tahan lama'),
+                    const Text('tekan sekali: nambah 1'),
+                    const Text('tekan dua kali: reset ke 0'),
+                    const Text('tahan lama: minus -1'),
+                      Text('counter: $counter', style: const TextStyle(fontSize: 20)),
+                  ],
+                ),
+              ],
+            ),
           ),
-          ListTile(
-            leading: const Icon(Icons.laptop_mac),
-            title: const Text('Laptop Pro 14"'),
-            subtitle: const Text('Rp 14.000.000'),
-          ),
-          ListTile(
-            leading: const Icon(Icons.watch),
-            title: const Text('Smartwatch Gen 5'),
-            subtitle: const Text('Rp 2.000.000'),
-          ),
-          ListTile(
-            leading: const Icon(Icons.headphones),
-            title: const Text('Wireless Headphones'),
-            subtitle: const Text('Rp 1.200.000'),
-          ),
-          ListTile(
-            leading: const Icon(Icons.tv),
-            title: const Text('Smart TV 42"'),
-            subtitle: const Text('Rp 4.500.000'),
-          ),
+          ...loveEmojis,
         ],
+      
       ),
+
+
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            counter++;
+          });
+        },
+        tooltip: 'Tambah Counter',
+        child: const Icon(Icons.add),
+
+        
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+
+      
     );
   }
 }
