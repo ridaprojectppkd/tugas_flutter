@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tugas_flutter/Tugas3flutter.dart';
+import 'package:tugas_flutter/Tugas4flutter%20copy.dart';
 import 'package:tugas_flutter/gpttest.dart';
 import 'package:tugas_flutter/meet2A.dart';
 import 'package:tugas_flutter/meet3c.dart';
@@ -38,7 +39,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-         home: gptbebe(),
+         home: TugasEmpattrial(),
     );
   }
 }
