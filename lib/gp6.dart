@@ -277,3 +277,38 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
+
+
+
+// const Text(
+//                 'Password',
+//                 style: TextStyle(fontWeight: FontWeight.bold),
+//               ),
+//               const SizedBox(height: 8),
+//               TextFormField(
+//                 controller: _passwordController,
+//                 obscureText: true,
+//                 decoration: InputDecoration(
+//                   hintText: 'Enter your password',
+//                   border: OutlineInputBorder(
+//                     borderRadius: BorderRadius.circular(32),
+
+//                     ///////pw hinden paswooorddddd
+//                   ),
+//                   suffixIcon: TextButton(
+//                     onPressed: () {
+//                       // Forgot password action/////////////////////////////////////////////////
+//                     },
+//                     child: const Text(
+//                       'forgot password?',
+//                       style: TextStyle(color: Color(0xff2E5077)),
+//                     ),
+//                   ),
+//                 ),
+//                 validator: (value) {
+//                   if (value == null || value.isEmpty) {
+//                     return 'Please enter your password';
+//                   }
+//                   return null;
+//                 },
+//               ),
