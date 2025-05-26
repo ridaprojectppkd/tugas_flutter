@@ -20,7 +20,7 @@ class MeetEmpatA extends StatelessWidget {
               mainAxisSpacing: 10, // Untuk menentukan jarak antar item
               crossAxisCount: 2, // Untuk menentukan jumlah kolom
               children: <Widget>[
-                Container(color: Color(0xfFE5D26)),
+                Container(color: Color(0x0ffe5d26)),
                 Container(color: Color.fromARGB(255, 242, 191, 120)),
                 Container(color: Color(0xff9EBC8A)),
               ],

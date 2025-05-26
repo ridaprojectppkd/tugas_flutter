@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class TugasEmpattrial extends StatelessWidget {
-  const TugasEmpattrial ({Key? key}) : super(key: key);
+  const TugasEmpattrial ({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -170,12 +170,12 @@ class TugasEmpatTile extends StatelessWidget {
   final String kriteriaUmur;
 
   const TugasEmpatTile({
-    Key? key,
+    super.key,
     required this.icon,
     required this.deskripsi,
     required this.harga,
     required this.kriteriaUmur,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

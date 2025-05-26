@@ -116,19 +116,23 @@ class _InteractivePageState extends State<InteractivePage> {
                           icon: Icon(
                             Icons.favorite,
                             color: isLiked ? Colors.red : Colors.grey,
+                            ////////////mengubah warna ikon antara merah (disukai) dan abu-abu (tidak disukai)
                             size: 30,
                           ),
                           onPressed: () {
                             setState(() {
                               isLiked = !isLiked;
                               if (isLiked) { 
+                                ////ISLIKED membalik nilai boolean saat tombol ditekan
                                 displayedText = 'Disukai 💖';
                                 loveEmojis = List.generate(
                                   30,
                                   (index) => Positioned(
+                                    //////Left Random nextDouble: Posisi horizontal acak (kiri-kanan)
                                     left:
                                         Random().nextDouble() *
                                         MediaQuery.of(context).size.width,
+                                        //////////Top Random nextdouble Posisi vertikal acak (atas-bawah)
                                     top:
                                         Random().nextDouble() *
                                         MediaQuery.of(context).size.height,
@@ -136,6 +140,10 @@ class _InteractivePageState extends State<InteractivePage> {
                                       '💖',
                                       style: TextStyle(
                                         fontSize:
+                                        /////Fungsi ini menghasilkan angka desimal acak antara 0.0 (termasuk) sampai 1.0
+                                        ///Kode ini digunakan untuk menghasilkan ukuran font acak antara 20 hingga 40 pixel untuk emoji hati
+                                        ///////desimal 0.5 * 20 = 10.0
+                                        ///10.0 + 20 = 30.0
                                             Random().nextDouble() * 20 + 20,
                                       ),
                                     ),
@@ -335,6 +343,13 @@ class _InteractivePageState extends State<InteractivePage> {
                       ],
                     ),
                   ),
+                  Container(
+                    padding: const EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      color: Color(0XFF37B7C3),
+                      
+                    ),
+                  )
                 ],
               ),
             ),
