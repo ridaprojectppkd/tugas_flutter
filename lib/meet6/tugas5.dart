@@ -35,6 +35,12 @@ class _InteractivePageState extends State<InteractivePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.home),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
         title: Center(
           child: const Text(
             'Halaman Interaktif 🦄🐋',
@@ -50,7 +56,11 @@ class _InteractivePageState extends State<InteractivePage> {
             gradient: LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
-              colors: [Colors.green, Colors.blue, Color.fromARGB(255, 211, 5, 252)],
+              colors: [
+                Colors.green,
+                Colors.blue,
+                Color.fromARGB(255, 211, 5, 252),
+              ],
             ),
           ),
         ),
@@ -122,7 +132,7 @@ class _InteractivePageState extends State<InteractivePage> {
                           onPressed: () {
                             setState(() {
                               isLiked = !isLiked;
-                              if (isLiked) { 
+                              if (isLiked) {
                                 ////ISLIKED membalik nilai boolean saat tombol ditekan
                                 displayedText = 'Disukai 💖';
                                 loveEmojis = List.generate(
@@ -132,7 +142,7 @@ class _InteractivePageState extends State<InteractivePage> {
                                     left:
                                         Random().nextDouble() *
                                         MediaQuery.of(context).size.width,
-                                        //////////Top Random nextdouble Posisi vertikal acak (atas-bawah)
+                                    //////////Top Random nextdouble Posisi vertikal acak (atas-bawah)
                                     top:
                                         Random().nextDouble() *
                                         MediaQuery.of(context).size.height,
@@ -140,10 +150,10 @@ class _InteractivePageState extends State<InteractivePage> {
                                       '💖',
                                       style: TextStyle(
                                         fontSize:
-                                        /////Fungsi ini menghasilkan angka desimal acak antara 0.0 (termasuk) sampai 1.0
-                                        ///Kode ini digunakan untuk menghasilkan ukuran font acak antara 20 hingga 40 pixel untuk emoji hati
-                                        ///////desimal 0.5 * 20 = 10.0
-                                        ///10.0 + 20 = 30.0
+                                            /////Fungsi ini menghasilkan angka desimal acak antara 0.0 (termasuk) sampai 1.0
+                                            ///Kode ini digunakan untuk menghasilkan ukuran font acak antara 20 hingga 40 pixel untuk emoji hati
+                                            ///////desimal 0.5 * 20 = 10.0
+                                            ///10.0 + 20 = 30.0
                                             Random().nextDouble() * 20 + 20,
                                       ),
                                     ),
@@ -245,7 +255,6 @@ class _InteractivePageState extends State<InteractivePage> {
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                                
                               ),
                             ),
                           ),
@@ -327,7 +336,7 @@ class _InteractivePageState extends State<InteractivePage> {
                         ),
                         const Text(
                           'tekan dua kali: reset ke 0',
-                          style: TextStyle( fontWeight: FontWeight.bold),
+                          style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                         const Text(
                           'tahan lama: minus -1',
@@ -345,11 +354,8 @@ class _InteractivePageState extends State<InteractivePage> {
                   ),
                   Container(
                     padding: const EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      color: Color(0XFF37B7C3),
-                      
-                    ),
-                  )
+                    decoration: BoxDecoration(color: Color(0XFF37B7C3)),
+                  ),
                 ],
               ),
             ),

@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
 
 class TugasEmpattrial extends StatelessWidget {
-  const TugasEmpattrial ({super.key});
+  const TugasEmpattrial({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        /////////////NAVIGATOR POP =>
+        leading: IconButton(
+          icon: Icon(Icons.home) ,
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
         centerTitle: true,
         title: const Text(
           "Tugas 4 Formulir dan Daftar Produk",
@@ -102,36 +109,48 @@ class TugasEmpattrial extends StatelessWidget {
             const SizedBox(height: 12),
             ///////////////////////////////ListTile
             ListTile(
-  leading: Image.asset("Assets/image/anime1.jpg"),
-  title: Text("Sewa 7 jam untuk liburan"),
-  subtitle: Text("Rp. 90.000 Umur: 11-50 tahun"),
-  trailing: Icon(Icons.arrow_forward_ios),  // Changed from Icons() to Icon()
-  tileColor: Color.fromARGB(67, 208, 32, 248),
-  onTap: () {},
-  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-),       
-const SizedBox(height: 12),   
-            
- ListTile(
-  leading: Image.asset("Assets/image/anime1.jpg"),
-  title: Text("Sewa 5 jam untuk acara keluarga"),
-  subtitle: Text("Rp. 90.000 Umur: 11-50 tahun"),
-  trailing: Icon(Icons.arrow_forward_ios),  // Changed from Icons() to Icon()
-  tileColor: Color.fromARGB(147, 198, 50, 247),
-  onTap: () {},
-  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-),      
-const SizedBox(height: 12),    
-ListTile(
-  leading: Image.asset("Assets/image/anime1.jpg"),
-  title: Text("1 Hari Full Day"),
-  subtitle: Text("Rp. 90.000 Umur: 40-50 tahun"),
-  trailing: Icon(Icons.arrow_forward_ios),  // Changed from Icons() to Icon()
-  tileColor: Color.fromARGB(104, 205, 34, 34),
-  onTap: () {},
-  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-),
-            
+              leading: Image.asset("Assets/image/anime1.jpg"),
+              title: Text("Sewa 7 jam untuk liburan"),
+              subtitle: Text("Rp. 90.000 Umur: 11-50 tahun"),
+              trailing: Icon(
+                Icons.arrow_forward_ios,
+              ), // Changed from Icons() to Icon()
+              tileColor: Color.fromARGB(67, 208, 32, 248),
+              onTap: () {},
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+            ),
+            const SizedBox(height: 12),
+
+            ListTile(
+              leading: Image.asset("Assets/image/anime1.jpg"),
+              title: Text("Sewa 5 jam untuk acara keluarga"),
+              subtitle: Text("Rp. 90.000 Umur: 11-50 tahun"),
+              trailing: Icon(
+                Icons.arrow_forward_ios,
+              ), // Changed from Icons() to Icon()
+              tileColor: Color.fromARGB(147, 198, 50, 247),
+              onTap: () {},
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+            ),
+            const SizedBox(height: 12),
+            ListTile(
+              leading: Image.asset("Assets/image/anime1.jpg"),
+              title: Text("1 Hari Full Day"),
+              subtitle: Text("Rp. 90.000 Umur: 40-50 tahun"),
+              trailing: Icon(
+                Icons.arrow_forward_ios,
+              ), // Changed from Icons() to Icon()
+              tileColor: Color.fromARGB(104, 205, 34, 34),
+              onTap: () {},
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+            ),
+
             // Card(
             //   shape: RoundedRectangleBorder(
             //     borderRadius: BorderRadius.circular(10),
@@ -148,13 +167,13 @@ ListTile(
             //       style: TextStyle(
             //         fontWeight: FontWeight.bold,
             //         color: Color.fromARGB(255, 78, 113, 255),
-              //     ),
-              //   ),
-              //   subtitle: const Text('Rp 3.500.000'),
-              //   trailing: const Icon(Icons.arrow_forward_ios),
-              //   tileColor: Color.fromARGB(64, 86, 9, 218),
-              //   onTap: () {},
-              // ),
+            //     ),
+            //   ),
+            //   subtitle: const Text('Rp 3.500.000'),
+            //   trailing: const Icon(Icons.arrow_forward_ios),
+            //   tileColor: Color.fromARGB(64, 86, 9, 218),
+            //   onTap: () {},
+            // ),
             // ),
           ],
         ),
