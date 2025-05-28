@@ -71,7 +71,7 @@ class _MyWidgetState extends State<tugas7baru> {
               ),
             ),
             ListTile(
-              leading: Icon(Icons.dark_mode),
+              leading: Icon(Icons.dark_mode, color: Color(0xff265073),),
               title: Text(
                 'Mode Gelap',
                 style: TextStyle(color: Color(0xff2D9596)),
@@ -85,7 +85,7 @@ class _MyWidgetState extends State<tugas7baru> {
             ),
 
             ListTile(
-              leading: Icon(Icons.description),
+              leading: Icon(Icons.description, color: Color(0xff265073),),
               title: Text(
                 'Syarat & Ketentuan',
                 style: TextStyle(color: Color(0xff2D9596)),
@@ -98,8 +98,8 @@ class _MyWidgetState extends State<tugas7baru> {
               },
             ),
             ListTile(
-              leading: Icon(Icons.shop),
-              title: Text('Ketegori Produk'),
+              leading: Icon(Icons.shop, color: Color(0xff265073),),
+              title: Text('Ketegori Produk', style: TextStyle(color: Color(0xff2D9596)),),
               onTap: () {
                 setState(() {
                   _selectedIndex = 2;
@@ -109,8 +109,8 @@ class _MyWidgetState extends State<tugas7baru> {
             ),
 
             ListTile(
-              leading: Icon(Icons.calendar_month, color: Color(0xff2D9596)),
-              title: Text('Pilih tanggal lahir'),
+              leading: Icon(Icons.calendar_month, color: Color(0xff265073)),
+              title: Text('Pilih tanggal lahir', style: TextStyle(color: Color(0xff2D9596)),),
               onTap: () {
                 setState(() {
                   _selectedIndex = 3;
@@ -120,8 +120,8 @@ class _MyWidgetState extends State<tugas7baru> {
             ),
 
             ListTile(
-              leading: Icon(Icons.date_range),
-              title: Text('Atur Pengingat'),
+              leading: Icon(Icons.date_range, color: Color(0xff265073),),
+              title: Text('Atur Pengingat', style: TextStyle(color: Color(0xff2D9596)),),
               onTap: () {
                 setState(() {
                   _selectedIndex = 4;
