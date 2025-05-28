@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tugas_flutter/Materi/meet_4A.dart';
-import 'package:tugas_flutter/meet6/tugas7flutter.dart';
+// import 'package:tugas_flutter/meet6/7flutter.dart';
+// import 'package:tugas_flutter/meet6/tugas7flutter.dart';
+import 'package:tugas_flutter/meet6/tugas7/tugas8.dart';
 import 'package:tugas_flutter/meet_12/meet_12a.dart';
 
 // Import halaman yang digunakan
@@ -25,11 +27,11 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => const LoginScreen(),
+        '/': (context) => const tugas8(),
         '/Tugas5': (context) => Tugas5(),
         '/Tugas6': (context) => MeetEmpatA(),
         '/Tugas12': (context) => Meet12AInputWidget(),
-        '/Tugas7' : (context) => tugas7()
+        // '/Tugas7' : (context) => tugas7()
       },
       debugShowCheckedModeBanner: false,
     );
