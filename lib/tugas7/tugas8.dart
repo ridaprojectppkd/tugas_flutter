@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tugas_flutter/meet6/tugas7/7flutter.dart';
+import 'package:tugas_flutter/tugas7/7flutter.dart';
 import 'package:tugas_flutter/meet6/Tugas3flutter.dart';
-import 'package:tugas_flutter/meet6/tugas7/profil.dart';
+import 'package:tugas_flutter/tugas7/profil.dart';
 
 class tugas8 extends StatefulWidget {
   const tugas8({super.key});
@@ -11,7 +11,7 @@ class tugas8 extends StatefulWidget {
 }
 
 class _tugas8State extends State<tugas8> {
-  List<Widget> _screen = [ProfilePage(), tugas7baru()];
+  final List<Widget> _screen = [ProfilePage(), tugas7baru()];
   int _selectedIndex = 0;
   @override
   Widget build(BuildContext context) {

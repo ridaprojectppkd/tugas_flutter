@@ -9,7 +9,7 @@ class Checkbox2 extends StatefulWidget { // Changed class name to PascalCase
 
 class _Checkbox2State extends State<Checkbox2> {
   bool _isTermsAccepted = false; // Added missing state variable
-  bool _isSwitchEnabled = false; // Added missing state variable
+  final bool _isSwitchEnabled = false; // Added missing state variable
 
   @override
   Widget build(BuildContext context) {

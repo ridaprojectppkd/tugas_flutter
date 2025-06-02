@@ -14,7 +14,7 @@ class tugas7new extends StatefulWidget {
 class _MyWidgetState extends State<tugas7new> {
   ///////////STATE SYARAT CHECKBOX
   bool _isTermsAccepted = false;
-  bool _isSwitchEnabled = false;
+  final bool _isSwitchEnabled = false;
   bool _isDarkMode = false;
   
 

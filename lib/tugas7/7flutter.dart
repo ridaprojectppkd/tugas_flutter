@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 // import 'package:flutter/widgets.dart';
-import 'package:tugas_flutter/meet6/tugas7/7checkbox.dart';
-import 'package:tugas_flutter/meet6/tugas7/7colormode.dart';
-import 'package:tugas_flutter/meet6/tugas7/7date.dart';
-import 'package:tugas_flutter/meet6/tugas7/7produk.dart';
+import 'package:tugas_flutter/tugas7/7checkbox.dart';
+import 'package:tugas_flutter/tugas7/7colormode.dart';
+import 'package:tugas_flutter/tugas7/7date.dart';
+import 'package:tugas_flutter/tugas7/7produk.dart';
 import 'package:tugas_flutter/meet6/7reminder.dart';
 // import 'package:tugas_flutter/meet6/Tugas3flutter.dart';
 

@@ -11,7 +11,7 @@ class _DarkModePageState extends State<switchmode> {
   bool _isDarkMode = false;
 
   // Warna untuk tema gelap dan terang
-  final Color _darkBackground = Color(0XFF2D9596)!;
+  final Color _darkBackground = Color(0XFF2D9596);
   final Color _lightBackground = Colors.white;
 
   @override
