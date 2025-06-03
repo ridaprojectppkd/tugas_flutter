@@ -3,6 +3,8 @@ import 'package:tugas_flutter/Materi/meet_4A.dart';
 import 'package:tugas_flutter/constant/app_color.dart';
 import 'package:tugas_flutter/meet_11/meet_11.dart';
 import 'package:tugas_flutter/meet_12/meet_12a.dart';
+import 'package:tugas_flutter/meet_12/met_12b.dart';
+import 'package:tugas_flutter/sharedprefreces.dart/preferences.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -79,7 +81,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     //   context,
                     //   MaterialPageRoute(builder: (context) => const MeetLima()),
                     // );
-                    Navigator.pushNamed(context, Meet12AInputWidget.id);
+                    PreferenceHandler.saveLogin(true);
+                    Navigator.pushNamed(context, MeetDuaBelasB.id);
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppColor.blueButton,

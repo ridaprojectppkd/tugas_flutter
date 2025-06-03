@@ -1,5 +1,6 @@
-
 import 'package:flutter/material.dart';
+import 'package:tugas_flutter/meet_12/met_12b.dart';
+import 'package:tugas_flutter/sharedprefreces.dart/preferences.dart';
 
 class tugas6 extends StatelessWidget {
   const tugas6({super.key});
@@ -73,13 +74,17 @@ class _LoginScreenState extends State<LoginScreen> {
                   const Center(
                     child: Text(
                       'Sign In into your account',
-                      style: TextStyle(fontSize: 14 , color: Colors.grey),
+                      style: TextStyle(fontSize: 14, color: Colors.grey),
                     ),
                   ),
                   const SizedBox(height: 40),
                   const Text(
                     'Email Address',
-                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Color(0xff888888)),
+                    style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xff888888),
+                    ),
                   ),
                   const SizedBox(height: 8),
                   TextFormField(
@@ -100,7 +105,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   const SizedBox(height: 20),
                   const Text(
                     'Phone Number',
-                    style: TextStyle(fontWeight: FontWeight.bold, color: Color(0xff888888)),
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xff888888),
+                    ),
                   ),
                   const SizedBox(height: 8),
                   TextFormField(
@@ -110,7 +118,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       hintText: 'Enter your phone number',
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(32),
-                        borderSide: BorderSide(color:Color(0xff888888))
+                        borderSide: BorderSide(color: Color(0xff888888)),
                       ),
                     ),
                     validator:
@@ -122,7 +130,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   const SizedBox(height: 20),
                   const Text(
                     'Password',
-                    style: TextStyle(fontWeight: FontWeight.bold, color: Color(0xff888888)),
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xff888888),
+                    ),
                   ),
                   const SizedBox(height: 8),
                   TextFormField(
@@ -145,7 +156,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(32),
-                        borderSide: BorderSide(color: Color(0xFF888888))
+                        borderSide: BorderSide(color: Color(0xFF888888)),
                       ),
                     ),
                   ),
@@ -166,9 +177,12 @@ class _LoginScreenState extends State<LoginScreen> {
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {
-                        if (_formKey.currentState!.validate()) {
-                          // Login logic here
-                        }
+                        // if (_formKey.currentState!.validate()) {
+                        //   // Login logic here
+
+                        // }
+                        PreferenceHandler.saveLogin(true);
+                        Navigator.pushNamed(context, MeetDuaBelasB.id);
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xff283FB1),
@@ -219,7 +233,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         padding: const EdgeInsets.symmetric(vertical: 16),
                         side: BorderSide(color: Colors.grey[300]!),
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(32), 
+                          borderRadius: BorderRadius.circular(32),
                         ),
                       ),
                     ),
