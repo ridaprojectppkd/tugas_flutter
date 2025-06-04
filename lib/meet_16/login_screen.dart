@@ -1,25 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:tugas_flutter/Materi/meet_4A.dart';
 import 'package:tugas_flutter/constant/app_color.dart';
 import 'package:tugas_flutter/meet_11/meet_11.dart';
-import 'package:tugas_flutter/meet_12/met_12b.dart';
-import 'package:tugas_flutter/sharedprefreces.dart/preferences.dart';
+import 'package:tugas_flutter/meet_16/database/db_helper%20copy.dart';
+import 'package:tugas_flutter/meet_16/register_screen%20copy.dart';
 
-class LoginScreen extends StatefulWidget {
-  // static var id;
-
-  const LoginScreen({super.key});
-  // static const String id = "/login_screen_app;"
-
+class LoginScreenApp extends StatefulWidget {
+  const LoginScreenApp({super.key});
+  static const String id = "/login_screen_app";
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<LoginScreenApp> createState() => _LoginScreenAppState();
 }
 
-class _LoginScreenState extends State<LoginScreen > {
+class _LoginScreenAppState extends State<LoginScreenApp> {
   bool isVisibility = false;
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Stack(children: [buildBackground(), buildLayer()]));
+    return Scaffold(
+      body: Form(
+        key: _formKey,
+        child: Stack(children: [buildBackground(), buildLayer()]),
+      ),
+    );
   }
 
   SafeArea buildLayer() {
@@ -43,15 +47,18 @@ class _LoginScreenState extends State<LoginScreen > {
               height(24),
               buildTitle("Email Address"),
               height(12),
-              buildTextField(hintText: "Enter your email"),
-              height(16),
-              buildTitle("Phone Number"),
-              height(12),
-              buildTextField(hintText: "Enter your phone number"),
+              buildTextField(
+                hintText: "Enter your email",
+                controller: emailController,
+              ),
               height(16),
               buildTitle("Password"),
               height(12),
-              buildTextField(hintText: "Enter your password", isPassword: true),
+              buildTextField(
+                hintText: "Enter your password",
+                isPassword: true,
+                controller: passwordController,
+              ),
               height(12),
               Align(
                 alignment: Alignment.centerRight,
@@ -77,14 +84,29 @@ class _LoginScreenState extends State<LoginScreen > {
                 width: double.infinity,
                 height: 56,
                 child: ElevatedButton(
-                  onPressed: () {
-                    // Navigate to MeetLima screen menggunakan Push
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(builder: (context) => const MeetLima()),
-                    // );
-                    PreferenceHandler.saveLogin(true);
-                    Navigator.pushNamed(context, MeetDuaBelasB.id);
+                  onPressed: () async {
+                    if (_formKey.currentState!.validate()) {
+                      final userData = await DbHelper.login(
+                        emailController.text,
+                        passwordController.text,
+                      );
+                      if (userData != null) {
+                        if (mounted) {
+                          print('data ada ${userData.toJson()}');
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(content: Text("Login successful")),
+                          );
+                        }
+                      } else {
+                        if (mounted) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text("Email atau password salah"),
+                            ),
+                          );
+                        }
+                      }
+                    }
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppColor.blueButton,
@@ -163,10 +185,7 @@ class _LoginScreenState extends State<LoginScreen > {
                   ),
                   TextButton(
                     onPressed: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(builder: (context) => MeetEmpatA()),
-                      );
+                      Navigator.pushNamed(context, RegisterScreenApp.id);
                     },
                     child: Text(
                       "Sign Up",
@@ -200,8 +219,19 @@ class _LoginScreenState extends State<LoginScreen > {
     );
   }
 
-  TextField buildTextField({String? hintText, bool isPassword = false}) {
-    return TextField(
+  Widget buildTextField({
+    String? hintText,
+    bool isPassword = false,
+    required TextEditingController controller,
+  }) {
+    return TextFormField(
+      controller: controller,
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'Please enter some text';
+        }
+        return null;
+      },
       obscureText: isPassword ? isVisibility : false,
       decoration: InputDecoration(
         hintText: hintText,

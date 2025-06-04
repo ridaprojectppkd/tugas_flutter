@@ -49,6 +49,8 @@ class AksesorisMobilPage extends StatelessWidget {
     ),
   ];
 
+  const AksesorisMobilPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,7 +68,7 @@ class AksesorisMobilPage extends StatelessWidget {
 class ListProduk extends StatelessWidget {
   final Produk produk;
 
-  const ListProduk({Key? key, required this.produk}) : super(key: key);
+  const ListProduk({super.key, required this.produk});
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +76,7 @@ class ListProduk extends StatelessWidget {
       margin: EdgeInsets.all(10),
       elevation: 3,
       child: ListTile(
-        leading: Container(
+        leading: SizedBox(
           width: 60,
           height: 60,
           child: Image.asset(

@@ -1,18 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:tugas_flutter/Materi/meet_4A.dart';
-import 'package:tugas_flutter/meet6/Tugas6flutter.dart';
 import 'package:tugas_flutter/meet_12/met_12b.dart';
-import 'package:tugas_flutter/meet_14/meet_14a.dart';
+import 'package:tugas_flutter/meet_16/login_screen.dart';
+import 'package:tugas_flutter/meet_16/register_screen%20copy.dart';
+
 import 'package:tugas_flutter/sharedprefreces.dart/splash_screen.dart';
-import 'package:tugas_flutter/tugas10.dart/tugas_10.flutter.dart';
-import 'package:tugas_flutter/tugas9/tugas9flutter.dart';
 // import 'package:tugas_flutter/meet6/7flutter.dart';
 // import 'package:tugas_flutter/meet6/tugas7flutter.dart';
-import 'package:tugas_flutter/tugas7/tugas8.dart';
-import 'package:tugas_flutter/meet_12/meet_12a.dart';
 
 // Import halaman yang digunakan
-import 'package:tugas_flutter/meet6/tugas5.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,10 +28,12 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const SplashScreen(),
-        '/login': (context) => LoginScreen(),
-        '/Tugas5': (context) => Tugas5(),
-        '/Tugas6': (context) => MeetEmpatA(),
-        '/Tugas12': (context) => Meet12AInputWidget(),
+        // '/login': (context) => LoginScreenApp(),
+        // '/Tugas5': (context) => Tugas5(),
+        // '/Tugas6': (context) => MeetEmpatA(),
+        // '/Tugas12': (context) => Meet12AInputWidget(),
+        LoginScreenApp.id: (context) => LoginScreenApp(), ///////////meet 16
+        RegisterScreenApp.id:(context) => RegisterScreenApp(), ///////////meet16
         MeetDuaBelasB.id: (context) => MeetDuaBelasB(),
         // '/Tugas7' : (context) => tugas7()
       },

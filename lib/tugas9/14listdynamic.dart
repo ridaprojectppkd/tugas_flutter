@@ -11,6 +11,8 @@ class ListMapDynamic extends StatelessWidget {
     
   ];
 
+  const ListMapDynamic({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

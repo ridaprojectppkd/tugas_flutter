@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tugas_flutter/constant/app_image.dart';
 import 'package:tugas_flutter/constant/app_style.dart';
-import 'package:tugas_flutter/meet_12/met_12b.dart';
+import 'package:tugas_flutter/meet_16/login_screen.dart';
 import 'package:tugas_flutter/sharedprefreces.dart/preferences.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -16,15 +16,19 @@ class _SplashScreenState extends State<SplashScreen> {
     Future.delayed(Duration(seconds: 3), () async {
       bool isLogin = await PreferenceHandler.getLogin();
       print("isLogin: $isLogin");
-      if (isLogin) {
-        return Navigator.pushNamedAndRemoveUntil(
+      // if (isLogin) {
+      //   return Navigator.pushNamedAndRemoveUntil(
+      //     context,
+      //     MeetDuaBelasB.id,
+      //     (route) => false,
+      //   );
+      // } else {
+        Navigator.pushNamedAndRemoveUntil(
           context,
-          MeetDuaBelasB.id,
-          (route) => false,
-        );
-      } else {
-        Navigator.pushNamedAndRemoveUntil(context, "/login", (route) => false);
-      }
+           LoginScreenApp.id, 
+           (route) => false,
+           );
+      // }
     });
   }
 

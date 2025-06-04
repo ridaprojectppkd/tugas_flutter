@@ -2,10 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:tugas_flutter/tugas9/14list.dart';
 import 'package:tugas_flutter/tugas9/14listdynamic.dart';
 import 'package:tugas_flutter/tugas9/14model.dart';
-import 'package:tugas_flutter/meet_14/list_in_map_widget.dart.dart';
-import 'package:tugas_flutter/meet_14/list_widget.dart';
-import 'package:tugas_flutter/meet_14/map_widget.dart';
-import 'package:tugas_flutter/meet_14/model_widget.dart';
 
 class TugasEmpatBelas extends StatelessWidget {
   const TugasEmpatBelas({super.key});

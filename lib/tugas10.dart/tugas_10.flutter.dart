@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:tugas_flutter/tugas10.dart/Terims.dart';
 
 class Tugas10 extends StatefulWidget {
