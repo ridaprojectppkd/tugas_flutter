@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tugas_flutter/tugas11/modelkom11.dart';
 import 'db_helper11.dart';
-import 'anggota_model.dart';
+// import 'anggota_model.dart';
 
 class TugasSebelas extends StatefulWidget {
   const TugasSebelas({super.key});
@@ -89,18 +89,18 @@ class _TugasSebelasState extends State<TugasSebelas> {
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8),
                     ),
-                    validator: (value) => 
-                        value!.isEmpty ? 'Wajib diisi' : null,
+                    // validator: (value) => 
+                        // value!.isEmpty ? 'Wajib diisi' : null,
                   ),
                   // Add all other form fields similarly...
-                  const SizedBox(height: 16),
-                  ElevatedButton(
-                    onPressed: simpanData,
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(double.infinity, 45),
-                      backgroundColor: const Color.fromARGB(192, 7, 238, 255),
-                    ),
-                    child: const Text('Simpan'),
+                  // const SizedBox(height: 16),
+                  // ElevatedButton(
+                  //   onPressed: simpanData,
+                  //   style: ElevatedButton.styleFrom(
+                  //     minimumSize: const Size(double.infinity, 45),
+                  //     backgroundColor: const Color.fromARGB(192, 7, 238, 255),
+                  //   ),
+                  //   child: const Text('Simpan'),
                   ),
                 ],
               ),

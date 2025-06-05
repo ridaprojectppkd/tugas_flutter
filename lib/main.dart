@@ -3,6 +3,7 @@ import 'package:tugas_flutter/meet_12/met_12b.dart';
 import 'package:tugas_flutter/meet_16/login_screen.dart';
 import 'package:tugas_flutter/meet_16/register_screen%20copy.dart';
 import 'package:tugas_flutter/tugas11/tugas11.dart';
+// import 'package:tugas_flutter/tugas11/tugas11.dart';
 // import 'package:tugas_flutter/meet6/7flutter.dart';
 // import 'package:tugas_flutter/meet6/tugas7flutter.dart';
 
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => komunitashewan(),
+        '/': (context) => TugasSebelas(),
         // '/': (context) => const SplashScreen(),
         // '/login': (context) => LoginScreenApp(),
         // '/Tugas5': (context) => Tugas5(),
