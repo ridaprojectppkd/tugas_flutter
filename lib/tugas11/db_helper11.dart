@@ -1,7 +1,6 @@
 import 'package:path/path.dart';
 
 import 'package:sqflite/sqflite.dart';
-import 'package:tugas_flutter/studycasesiswa.dart/siswa_model.dart';
 import 'package:tugas_flutter/tugas11/modelkom11.dart';
 
 class DBHelper {

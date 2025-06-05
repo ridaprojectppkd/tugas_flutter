@@ -3,6 +3,8 @@ import 'siswa_model.dart';
 import '../meet_16/siswa_repository.dart';
 
 class SiswaApp extends StatefulWidget {
+  const SiswaApp({super.key});
+
   @override
   _SiswaAppState createState() => _SiswaAppState();
 }
@@ -31,7 +33,7 @@ class _SiswaAppState extends State<SiswaApp> {
     final umur = int.tryParse(umurController.text) ?? 0;
 
     if (nama.isNotEmpty && umur > 0) {
-      await (Siswa(nama: nama, umur: umur));
+      (Siswa(nama: nama, umur: umur));
       namaController.clear();
       umurController.clear();
       updateState();

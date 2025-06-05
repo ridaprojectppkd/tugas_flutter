@@ -84,23 +84,29 @@ class _TugasSebelasState extends State<TugasSebelas> {
                 children: [
                   TextFormField(
                     controller: _namaController,
+                     validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Wajib diisi';
+                  }
+                  return null;
+                },
                     decoration: InputDecoration(
                       labelText: 'Nama Lengkap',
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8),
                     ),
-                    // validator: (value) => 
-                        // value!.isEmpty ? 'Wajib diisi' : null,
+                   
+                  ),
                   ),
                   // Add all other form fields similarly...
-                  // const SizedBox(height: 16),
-                  // ElevatedButton(
-                  //   onPressed: simpanData,
-                  //   style: ElevatedButton.styleFrom(
-                  //     minimumSize: const Size(double.infinity, 45),
-                  //     backgroundColor: const Color.fromARGB(192, 7, 238, 255),
-                  //   ),
-                  //   child: const Text('Simpan'),
+                  const SizedBox(height: 16),
+                  ElevatedButton(
+                    onPressed: simpanData,
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: const Size(double.infinity, 45),
+                      backgroundColor: const Color.fromARGB(192, 7, 238, 255),
+                    ),
+                    child: const Text('Simpan'),
                   ),
                 ],
               ),
