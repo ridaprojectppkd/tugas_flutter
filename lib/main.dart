@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tugas_flutter/meet_12/met_12b.dart';
 import 'package:tugas_flutter/meet_16/login_screen.dart';
 import 'package:tugas_flutter/meet_16/register_screen%20copy.dart';
-
-import 'package:tugas_flutter/sharedprefreces.dart/splash_screen.dart';
+import 'package:tugas_flutter/tugas11/tugas11.dart';
 // import 'package:tugas_flutter/meet6/7flutter.dart';
 // import 'package:tugas_flutter/meet6/tugas7flutter.dart';
 
@@ -27,7 +26,8 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => const SplashScreen(),
+        '/': (context) => komunitashewan(),
+        // '/': (context) => const SplashScreen(),
         // '/login': (context) => LoginScreenApp(),
         // '/Tugas5': (context) => Tugas5(),
         // '/Tugas6': (context) => MeetEmpatA(),
@@ -35,6 +35,7 @@ class MyApp extends StatelessWidget {
         LoginScreenApp.id: (context) => LoginScreenApp(), ///////////meet 16
         RegisterScreenApp.id:(context) => RegisterScreenApp(), ///////////meet16
         MeetDuaBelasB.id: (context) => MeetDuaBelasB(),
+        
         // '/Tugas7' : (context) => tugas7()
       },
       debugShowCheckedModeBanner: false,

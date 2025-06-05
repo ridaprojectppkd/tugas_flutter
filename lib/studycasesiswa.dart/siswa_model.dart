@@ -5,6 +5,7 @@ class Siswa {
 
   Siswa({this.id, required this.nama, required this.umur});
 
+  // Konversi dari Object ke Map
   Map<String, dynamic> toMap() {
     return {
       'id': id,
@@ -13,11 +14,12 @@ class Siswa {
     };
   }
 
+  // Konversi dari Map ke Object
   factory Siswa.fromMap(Map<String, dynamic> map) {
     return Siswa(
-      id: map['id'], 
-      nama: map['nama'], 
-      umur: map['umur'],
+      id: map['id']?.toInt() ?? 0,
+      nama: map['nama'] ?? '',
+      umur: map['umur']?.toInt() ?? 0,
     );
   }
 }
