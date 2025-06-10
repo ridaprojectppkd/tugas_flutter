@@ -5,19 +5,20 @@ import 'package:tugas_flutter/tugas7/7colormode.dart';
 import 'package:tugas_flutter/tugas7/7date.dart';
 import 'package:tugas_flutter/tugas7/7produk.dart';
 import 'package:tugas_flutter/meet6/7reminder.dart';
+import 'package:tugas_flutter/tugas7/profil.dart';
 // import 'package:tugas_flutter/meet6/Tugas3flutter.dart';
 
-class tugas7baru extends StatefulWidget {
-  const tugas7baru({super.key});
+class drawer13 extends StatefulWidget {
+  const drawer13({super.key});
 
   @override
-  State<tugas7baru> createState() => _MyWidgetState();
+  State<drawer13> createState() => _drawer13State();
 }
 
-class _MyWidgetState extends State<tugas7baru> {
+class _drawer13State extends State<drawer13> {
   int _selectedIndex = 0;
   List<Widget> listscreen = [
-    switchmode(),
+    ProfilePage(),
     Checkbox2(),
     ProductCategoryPage(),
     BirthDatePage(),
@@ -63,7 +64,7 @@ class _MyWidgetState extends State<tugas7baru> {
                 children: [
                   CircleAvatar(
                     radius: 35,
-                    backgroundImage: AssetImage('Assets/image/anime 2.jpg'),
+                    backgroundImage: AssetImage(''),
                   ),
                   SizedBox(height: 14),
                   Text('Rida Dzakiyyah'),

@@ -4,27 +4,25 @@ import 'dart:convert';
 class AnggotaModel {
   int? id;
   String nama;
-  String alamat;
-  String phone;
-  String profesi;
   String email;
+  String visimisi;
+  String phone;
+
   AnggotaModel({
     this.id,
     required this.nama,
-    required this.alamat,
-    required this.phone,
-    required this.profesi,
     required this.email,
+    required this.visimisi,
+    required this.phone,
   });
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'id': id,
       'nama': nama,
-      'alamat': alamat,
-      'phone': phone,
-      'profesi': profesi,
-      'email': email,
+      'email' : email,
+      'visimisi' : visimisi,
+      'phone' : phone,
     };
   }
 
@@ -32,14 +30,14 @@ class AnggotaModel {
     return AnggotaModel(
       id: map['id'] != null ? map['id'] as int : null,
       nama: map['nama'] as String,
-      alamat: map['alamat'] as String,
+      email:map['email'] as String,
+      visimisi: map['visimisi'] as String ,
       phone: map['phone'] as String,
-      profesi: map['profesi'] as String,
-      email: map['email'] as String,
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory AnggotaModel.fromJson(String source) => AnggotaModel.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory AnggotaModel.fromJson(String source) =>
+    AnggotaModel.fromMap(json.decode(source) as Map<String, dynamic>);
 }
